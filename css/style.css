@@ -36,12 +36,11 @@ section .calculator{
 }
 
 
-input{
+/* input{
     grid-column: span 4;
     height: 65px;
-    width: 295px;
+    width: 324px;
     background-color: #ecf0f3;
-    /* box-shadow:-5px -5px 12px #ffffff; */
     border: none;    
     border-radius: 30px;
     color:rgb(70,70,70);
@@ -52,6 +51,26 @@ input{
     margin-top: 40px;
     margin-bottom: 30px;
     padding: 40px;        
+} */
+
+
+input[type="text"]{
+    grid-column: span 4;
+    background-color: #ecf0f3;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    color:rgb(70,70,70);
+    width: 100%;
+    height: 65px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding: 40px; 
+    padding: 45px 5px;
+    box-sizing: border-box;
+    text-align: right;
+    border: none;    
+    border-radius: 30px;
 }
 
 

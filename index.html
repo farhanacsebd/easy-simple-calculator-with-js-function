@@ -12,7 +12,7 @@
    <main>
     <section class="container">
         <div class="calculator">
-                <input type="text" placeholder="0">
+                <input type="text" id="myResult" disabled>
                 <button onclick="clear()">Cl</button>
                 <button onclick="del()">DEL</button>
                 <button onclick="display('%')">%</button>
@@ -31,7 +31,7 @@
                 <button onclick="display('+')">+</button>
                 <button onclick="display('.')">.</button>
                 <button onclick="display('0')">0</button>
-                <button onclick="display('')" class="equal">=</button>
+                <button onclick="answer()" class="equal">=</button>
         </div>
     </section>
    </main>
@@ -40,5 +40,6 @@
         <small>©2022. Simple Calculator. All rights reserved.Farhana,Bangladesh.</small>
     </p>
 </footer>
+<script src="main/app.js"></script>
 </body>
 </html>
