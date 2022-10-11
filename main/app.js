@@ -1,48 +1,74 @@
-const myResult = document.getElementById("myResult");
+const myResult = document.getElementById("myResult")
 
 
 /* clear options */
-function deleteMe(){
-    myResult.value ='';
+function deleteMe() {
+    myResult.value = '';
 }
 
 /* one by one delete options */
-function delte1(){
-    myResult.value = myResult.value.slice(0,-1);
+function delte1() {
+    myResult.value = myResult.value.slice(0, -1);
 }
 
 
 /* Values ​​are displayed one by one in the input file */
-function display(newValue){
+function display(newValue) {
     myResult.value += newValue;
+
 }
 
 
 
 /* this is the mathmatical function */
-function answer(){
-   
-   try {
-    myResult.value = eval(myResult.value);
+function answer() {
+
+    try {
+        myResult.value = eval(myResult.value);
     }
-   catch{
-    alert('Invalid')
-    myResult.value = "";
-   } 
+    catch {
+        alert('Invalid')
+        myResult.value = "";
+    }
 }
 
+// myResult.value 
+function percentage(per) {
+    var finalLength = 0;
+    var myString = (myResult.value).toString();
+    for (var i = myString.length; i > 0; i--) {
+        if (myString[i] == "+" || myString[i] == "-"  || myString[i] == "*"  || myString[i] == "/" ) {
+            finalLength = i;
+            break;
+        }
+    }
 
-function percentage() {
-    debugger
-    let val =0;
-     /*val = parseFloat(val) / 100; */
-    val = (myResult.value)*(val/100);
-    val = val.toString();
-    answer();
-  }
+    var slicedString = myString.substr(0,finalLength);
 
+    var symbolSliced = myString[finalLength];
 
-/* function percentage(partialValue, totalValue) {
+    var otherSlicedString = myString.substr(finalLength+1,myString.length);
+
     
-    return (100 * partialValue) / totalValue;
- }  */
+    var slicedSum = eval(slicedString);
+    
+
+    console.log(symbolSliced); 
+    if(symbolSliced == "+"){
+        var totalPercentage = slicedSum + (slicedSum * otherSlicedString/100);
+    }
+    else if(symbolSliced == "-"){
+        var totalPercentage = slicedSum - (slicedSum * otherSlicedString/100);
+    }
+    else if(symbolSliced == "*"){
+        var totalPercentage = (slicedSum * otherSlicedString/100);
+    }
+    else {
+        var totalPercentage = slicedSum / (otherSlicedString/100);
+    }
+
+
+    myResult.value = totalPercentage;
+
+
+}
