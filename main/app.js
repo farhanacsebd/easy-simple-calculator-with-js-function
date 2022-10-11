@@ -1,4 +1,4 @@
-const myResult = document.getElementById("myResult")
+const myResult = document.getElementById("myResult");
 
 
 /* clear options */
@@ -30,3 +30,19 @@ function answer(){
     myResult.value = "";
    } 
 }
+
+
+function percentage() {
+    debugger
+    let val =0;
+     /*val = parseFloat(val) / 100; */
+    val = (myResult.value)*(val/100);
+    val = val.toString();
+    answer();
+  }
+
+
+/* function percentage(partialValue, totalValue) {
+    
+    return (100 * partialValue) / totalValue;
+ }  */
